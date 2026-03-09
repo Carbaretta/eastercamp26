@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 7</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="yuas.png">
+    <style>
+        .compass-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            background-color: var(--card-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .arrow-indicator {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 80px solid var(--primary-color);
+            transform-origin: 50% 120px;
+            top: 5px;
+            transition: transform 0.1s linear;
+        }
+
+        .compass-center {
+            width: 20px;
+            height: 20px;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container pt-5 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+                <a href="index.html" class="btn btn-outline-warning mb-3 float-start">&larr; Back to Index</a>
+                <div class="clearfix"></div>
+
+                <div class="card p-4">
+                    <h2 class="text-warning mb-4">Challenge 7</h2>
+                    <p class="text-white mb-4">Follow the arrow to reach your destination.</p>
+
+                    <div id="startScreen">
+                        <p class="text-muted small">This challenge requires access to your device's GPS and Compass.
+                            Please grant permissions when prompted.</p>
+                        <button id="startBtn" class="btn btn-warning btn-lg px-5 my-3">Start Tracking</button>
+                    </div>
+
+                    <div id="trackingScreen" class="d-none">
+                        <div class="compass-container my-4">
+                            <div class="arrow-indicator" id="arrow"></div>
+                            <div class="compass-center"></div>
+                        </div>
+
+                        <div class="alert bg-dark border-warning mt-4 text-white">
+                            <h4 id="distanceDisplay" class="text-warning mb-2">-- meters</h4>
+                            <div class="small text-muted">to destination</div>
+                            <div id="statusMessage" class="mt-2 small text-info">Waiting for location...</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="compass.js"></script>
+</body>
+
+</html>
