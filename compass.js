@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Target Coordinates
     const locations = [
-        { lat: 53.809098026576244, lng: -1.5532559117965117 },
-        { lat: 53.80879663111974, lng: -1.5539470790140664 },
-        { lat: 53.80933966665079, lng: -1.553753371137037 }
+        { lat: 54.30197484905185, lng: -1.5387322192662365 },
+        { lat: 54.303990993126476, lng: -1.5395414495668558 },
+        { lat: 54.304955467991604, lng: -1.5378260970275852 }
     ];
     let currentLocationIndex = 0;
 
@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let targetBearing = 0;
 
     startBtn.addEventListener('click', async () => {
+        const passInput = document.getElementById('challengePassword').value.trim().toLowerCase();
+        const errorMsg = document.getElementById('passwordError');
+
+        if (passInput !== 'tommy7') {
+            errorMsg.classList.remove('d-none');
+            return;
+        }
+
+        errorMsg.classList.add('d-none');
+
         // Request DeviceOrientation permission if required (iOS 13+)
         if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
             try {

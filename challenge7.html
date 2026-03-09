@@ -58,9 +58,34 @@
                     <p class="text-white mb-4">Follow the arrow to reach your destination.</p>
 
                     <div id="startScreen">
-                        <p class="text-muted small">This challenge requires access to your device's GPS and Compass.
-                            Please grant permissions when prompted.</p>
-                        <button id="startBtn" class="btn btn-warning btn-lg px-5 my-3">Start Tracking</button>
+                        <p class="text-white small text-start mb-3">
+                            To begin this challenge, you must ask the MOB for the Challenge 7 password and input it
+                            below. In this challenge, you are required to navigate between three locations across the
+                            NHAS. When you are within 10 metres of the location, a "Check in" button will appear,
+                            allowing you to register that checkpoint as captured. Once you have visited all three, you
+                            will be given a secret code that must be presented to the MOB to earn your points.
+                        </p>
+
+                        <p class="text-white small text-start mb-4">
+                            This challenge depends on your mobile device's inbuilt GPS and Compass, as such, technical
+                            glitches can occur. We suggest that your whole team has their phones out on this page and
+                            conducts the exercise together to eliminate any anomalous devices with malfunctioning
+                            compasses. You should also avoid large metal structures or each other's devices to prevent
+                            crosstalk. Good luck.
+                        </p>
+
+                        <div class="alert alert-warning text-dark text-start mb-4 fw-bold small">
+                            You must grant access to your location and compass to conduct this serial. Your location is
+                            not shared and will not be tracked once this page is closed.
+                        </div>
+
+                        <p class="text-danger fw-bold mb-2">Please enter the password to begin</p>
+                        <input type="text" class="form-control mb-3 text-center" id="challengePassword"
+                            placeholder="Password" autocomplete="off">
+
+                        <div id="passwordError" class="text-danger small mb-3 d-none">Incorrect password.</div>
+
+                        <button id="startBtn" class="btn btn-warning btn-lg px-5 mb-3 w-100">Start Tracking</button>
                     </div>
 
                     <div id="trackingScreen" class="d-none">
@@ -83,6 +108,10 @@
                         <p class="mb-4 text-white">Congratulations, you have successfully navigated to all points.</p>
                         <img src="yuas.png" alt="YUAS Logo" class="img-fluid mb-4"
                             style="max-height: 150px; object-fit: contain;">
+                        <div class="p-3 bg-dark rounded border border-warning" style="word-break: break-all;">
+                            <span class="text-muted small d-block mb-1">Verification Code:</span>
+                            <h3 id="base64Code" class="text-warning mb-0 font-monospace">WVVBUw==</h3>
+                        </div>
                     </div>
 
                 </div>
