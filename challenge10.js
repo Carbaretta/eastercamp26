@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownValue = document.getElementById('countdownValue');
     const imageTimerValue = document.getElementById('imageTimerValue');
 
-    const TARGET_LAT = 54.30377208361364;
-    const TARGET_LNG = -1.535724495917061;
+    const TARGET_LAT = 54.29265038076779;
+    const TARGET_LNG = -1.526807747185884;
     const MAX_DISTANCE_METERS = 20;
     const COOKIE_NAME = 'ch10_viewed';
 
