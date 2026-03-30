@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 10</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="yuas.png">
+</head>
+
+<body>
+    <div class="container pt-5 pb-5 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+                <a href="index.html" class="btn btn-outline-warning mb-3 float-start">&larr; Back to Index</a>
+                <div class="clearfix"></div>
+
+                <div class="card p-4">
+                    <h2 class="text-warning mb-4">Challenge 10</h2>
+                    
+                    <!-- Start Screen -->
+                    <div id="startScreen">
+                        <div class="alert alert-warning text-dark text-start mb-4 fw-bold">
+                            WARNING: You will only be able to view the pattern for exactly 15 seconds. After which point, you will not be able to view it again. Do not proceed until your team is ready.
+                        </div>
+                        <p class="text-white mb-4">
+                            You must be within 20 meters of the objective to view this pattern. A GPS connection is required.
+                        </p>
+                        <button id="acceptBtn" class="btn btn-warning btn-lg px-5 w-100 fw-bold">Accept & Continue</button>
+                    </div>
+
+                    <!-- Processing GPS -->
+                    <div id="processingScreen" class="d-none">
+                        <p class="text-white">Acquiring GPS Signal...</p>
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Error Screen -->
+                    <div id="errorScreen" class="d-none mt-3">
+                        <h4 class="text-danger mb-3" id="errorMsgTitle">You are not at the objective location</h4>
+                        <p class="text-white mb-4" id="errorMsgDetail"></p>
+                        <a href="https://www.google.com/maps?q=54.30377208361364,-1.535724495917061" target="_blank" class="btn btn-success btn-lg px-5 w-100 fw-bold">Take me there</a>
+                        <button id="retryBtn" class="btn btn-outline-warning mt-3 w-100">Try Again</button>
+                    </div>
+
+                    <!-- Countdown Screen -->
+                    <div id="countdownScreen" class="d-none mt-4">
+                        <h1 class="display-1 fw-bold text-warning" id="countdownValue">3</h1>
+                        <p class="text-white">Get ready...</p>
+                    </div>
+
+                    <!-- Pattern Image Screen -->
+                    <div id="patternScreen" class="d-none">
+                        <h3 class="text-warning mb-3">Memorise This Pattern!</h3>
+                        <p class="text-danger fw-bold countdown-timer">Time remaining: <span id="imageTimerValue">15</span>s</p>
+                        <img src="challenge10.png" alt="Challenge 10 Pattern" class="img-fluid rounded border border-warning shadow-lg mb-3">
+                    </div>
+
+                    <!-- Exhausted Screen -->
+                    <div id="exhaustedScreen" class="d-none mt-4">
+                        <h3 class="text-danger mb-3 fw-bold">Pattern Locked</h3>
+                        <div class="alert bg-dark border-danger text-white">
+                            You have already seen this pattern.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="challenge10.js"></script>
+</body>
+
+</html>
